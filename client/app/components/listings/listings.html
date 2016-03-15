@@ -1,9 +1,10 @@
 <section id="main">
   <div id="listings">
     <div id="search">
-      <input ng-model="vm.query" ng-change="vm.filters(vm.query)" /> Search
-      <button ng-click=vm.previousPage()>Prev Page</button>
-      <button ng-click=vm.nextPage()>Next Page</button>
+      <input ng-model="vm.query" ng-change="vm.filters(vm.query)" /> 
+      <span id="searchLabel">Search</span>
+      <span class="button" ng-click=vm.previousPage()>Prev Page</span>
+      <span class="button" ng-click=vm.nextPage()>Next Page</span>
     </div>
     <div>
     <div ng-repeat="listing in vm.listings | limitTo:9" class="listing">
