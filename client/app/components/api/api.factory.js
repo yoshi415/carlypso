@@ -1,20 +1,19 @@
 const apiFactory = ($http, URL, $q) => {
   let allListings = [];
+  $http.defaults.useXDomain = true;
 
   const getCount = () => {
-    return 555
-    // return $http.get(`${URL}/count`)
-    //   .then(({data}) => {
-    //     console.log(data)
-    //     count = data;
-    //     return count;
-    //   });
+    return $http.get(`${URL}/count`)
+      .then(({data}) => {
+        console.log(data.value)
+        return data.value;
+      });
   }
 
   const getListings = (index, limit) => {
     return $http.get(`${URL}/listings`)
       .then(({data}) => {
-        console.log(data)
+        console.log('test', data)
         return data;
       });
   }

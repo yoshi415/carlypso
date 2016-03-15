@@ -1,6 +1,21 @@
 export class ListingsController {
   constructor(API) {
-    // this.Listings = Listings;
-    // this.count = this.getCount();
+    this.API = API;
+    this.getCount();
+    this.getListings();
+  }
+
+  getCount() {
+    this.API.getCount()
+      .then((data) => {
+        this.count = data;
+      });
+  }
+
+  getListings() {
+    this.API.getListings()
+      .then((data) => {
+        this.listings = data;
+      });
   }
 }

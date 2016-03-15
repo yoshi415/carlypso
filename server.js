@@ -7,12 +7,19 @@ const request = require('request');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 5000;
 const baseUrl = 'https://interview.carlypso.com/';
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
+
+app.all('/*', function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
 app.get('/count', function(req, res) {
   handleReq('count', req, res)
@@ -24,6 +31,7 @@ app.get('/listings', function(req, res) {
   let route = `listings?offset=${index}&limit=${limit}`;
   handleReq(route, req, res)
 });
+
 
 function handleReq(route, req, res) {
   let url = baseUrl + route;
