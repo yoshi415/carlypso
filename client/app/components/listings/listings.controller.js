@@ -4,9 +4,10 @@ export class ListingsController {
   constructor(API) {
     this.pic = autoPic;
     this.API = API;
+    this.index = 0;
+    this.listings = [];
     this.getCount();
     this.getListings();
-    this.index = 0;
   }
 
   getCount() {
@@ -25,6 +26,7 @@ export class ListingsController {
 
   nextPage() {
     this.index += 8;
-    this.getListings(index)
+    console.log(this.index)
+    this.getListings(this.index, 8)
   }
 }

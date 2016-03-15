@@ -26,9 +26,9 @@ app.get('/count', function(req, res) {
 });
 
 app.get('/listings', function(req, res) {
-  let index = req.query.index || 0;
+  let index = req.query.offset || 10;
   let limit = req.query.limit || 8;
-  let route = `listings?offset=${index}&limit=${limit}`;
+  let route = `listings?offset=${Number(index)}&limit=${Number(limit)}`;
   handleReq(route, req, res)
 });
 

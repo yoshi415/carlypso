@@ -2,6 +2,7 @@
   <div id="listings">
     <div id="search">
       <search bind-to="vm.search" label="Search"></search>
+      <button ng-click=vm.nextPage()>Next Page</button>
     </div>
     <div ng-repeat="listing in vm.listings | limitTo:9 | filter:vm.search">
     <div id="listing">
