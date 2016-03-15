@@ -26,7 +26,11 @@ export class ListingsController {
 
   nextPage() {
     this.index += 8;
-    console.log(this.index)
-    this.getListings(this.index, 8)
+    this.getListings(this.index, 8);
+  }
+
+  previousPage() {
+    this.index -= 8;
+    this.getListings(this.index, 8);
   }
 }
