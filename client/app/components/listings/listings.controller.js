@@ -29,13 +29,13 @@ export class ListingsController {
   nextPage() {
     this.index += 8;
     this.query = '';
-    this.getListings(this.index, 1000);
+    this.getListings(this.index, 10000);
   }
 
   previousPage() {
     this.index -= 8;
     this.query = '';
-    this.getListings(this.index, 1000);
+    this.getListings(this.index, 10000);
   }
 
   filters(query) {

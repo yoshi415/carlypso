@@ -1,8 +1,6 @@
 export const listingsFactory = () => {
   const filterList = (query, cache) => {
-    // console.log(query)
     let search = query.split(' ');
-    console.log(search)
      search = [];
     let filteredList = [];
     search.forEach((field) => {
@@ -25,6 +23,7 @@ export const listingsFactory = () => {
         }
       }
     });
+    
     return filtered;
   }
 

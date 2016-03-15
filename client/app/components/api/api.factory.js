@@ -9,7 +9,7 @@ const apiFactory = ($http, URL, $q) => {
       });
   }
 
-  const getListings = (index=0, limit=1000) => {
+  const getListings = (index=0, limit=10000) => {
     return $http.get(`${URL}/listings?offset=${index}&limit=${limit}`)
 
       .then(({data}) => {
