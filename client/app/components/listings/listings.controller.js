@@ -6,6 +6,7 @@ export class ListingsController {
     this.API = API;
     this.getCount();
     this.getListings();
+    this.index = 0;
   }
 
   getCount() {
@@ -15,10 +16,15 @@ export class ListingsController {
       });
   }
 
-  getListings() {
-    this.API.getListings()
+  getListings(index, offset) {
+    this.API.getListings(index, offset)
       .then((data) => {
         this.listings = data.value;
       });
+  }
+
+  nextPage() {
+    this.index += 8;
+    this.getListings(index)
   }
 }

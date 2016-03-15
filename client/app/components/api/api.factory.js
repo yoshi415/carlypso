@@ -9,8 +9,9 @@ const apiFactory = ($http, URL, $q) => {
       });
   }
 
-  const getListings = (index, limit) => {
-    return $http.get(`${URL}/listings`)
+  const getListings = (index=0, limit=8) => {
+    return $http.get(`${URL}/listings?offset=${index}&limit=${limit}`)
+
       .then(({data}) => {
         console.table(data.value)
         return data;
