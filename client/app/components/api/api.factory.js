@@ -9,16 +9,15 @@ const apiFactory = ($http, URL, $q) => {
       });
   }
 
-  const getListings = (index=0, limit=8) => {
+  const getListings = (index=0, limit=1000) => {
     return $http.get(`${URL}/listings?offset=${index}&limit=${limit}`)
 
       .then(({data}) => {
-        console.table(data.value)
         return data;
       });
   }
 
-  return {getCount, getListings}
+  return { getCount, getListings }
 }
 
 apiFactory.$inject = ['$http', 'URL', '$q'];

@@ -1,11 +1,11 @@
 <section id="main">
   <div id="listings">
     <div id="search">
-      <search bind-to="vm.search" label="Search"></search>
+      <input ng-model="vm.query" ng-change="vm.filters(vm.query)" /> Search
       <button ng-click=vm.previousPage()>Prev Page</button>
       <button ng-click=vm.nextPage()>Next Page</button>
     </div>
-    <div ng-repeat="listing in vm.listings | limitTo:9 | filter:vm.search">
+    <div ng-repeat="listing in vm.listings | limitTo:9">
     <div id="listing">
       <div>
         <img ng-src="{{ vm.pic }}" id="{{ listing.color }}" />
