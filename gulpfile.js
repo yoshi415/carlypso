@@ -5,7 +5,7 @@ var webpack = require('webpack-stream');
 
 var paths = {
   entry: 'client/app/app.js',
-  app: ['client/app/**/*.{js,css,html}', 'client/styles/**/*.css'],
+  app: ['client/app/**/*.{js,styl,html}', 'client/styles/**/*.styl'],
   js: 'client/app/**/*.js',
   styl: ['client/app/**/*.styl', 'client/style/**/*.styl'],
   toCopy: ['client/index.html'],
