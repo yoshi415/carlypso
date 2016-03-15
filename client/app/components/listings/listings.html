@@ -1,5 +1,17 @@
-<div>
-  Count
-  {{ vm.listings }}
-  testasgsadfasfasd
-</div>
+<section id="main">
+  <div id="listings">
+    <div ng-repeat="listing in vm.listings | limitTo:9">
+    <div id="listing">
+      <div>
+        <img ng-src="{{ vm.pic }}" id="{{ listing.color }}" />
+      </div>
+      <div id="make">
+        Make/Model: <span ng-if=!listing.make>Unknown</span>
+      <span ng-if=listing.make>{{ listing.make }} {{ listing.model }}</span> <br />
+      </div>
+      <div id="details">
+        Color: <span id="color"> {{listing.color}} </span> <br />
+      </div>
+    </div>
+  </div>
+</section>

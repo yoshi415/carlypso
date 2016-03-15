@@ -5,15 +5,14 @@ const apiFactory = ($http, URL, $q) => {
   const getCount = () => {
     return $http.get(`${URL}/count`)
       .then(({data}) => {
-        console.log(data.value)
-        return data.value;
+        return data;
       });
   }
 
   const getListings = (index, limit) => {
     return $http.get(`${URL}/listings`)
       .then(({data}) => {
-        console.log('test', data)
+        console.table(data.value)
         return data;
       });
   }
