@@ -1,6 +1,9 @@
 <section id="main">
   <div id="listings">
-    <div ng-repeat="listing in vm.listings | limitTo:9">
+    <div id="search">
+      <search bind-to="vm.search" label="Search"></search>
+    </div>
+    <div ng-repeat="listing in vm.listings | limitTo:9 | filter:vm.search">
     <div id="listing">
       <div>
         <img ng-src="{{ vm.pic }}" id="{{ listing.color }}" />
