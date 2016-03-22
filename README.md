@@ -1,3 +1,4 @@
 # carlypso
 
-Just run npm start and navigate to localhost:9001
+Run `npm install`  `npm start`
+And navigate to localhost:9001
